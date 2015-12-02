@@ -78,7 +78,7 @@ while t < par.tmax:
 			delta_YCO = ab.dYCO_dt(Y_CO, Y_C_free, Y_O_free, n, K_ra, K_rd) * dt
 		# Also reduce dt so we don't form more than some percent of CO
 		#while ((Y_CO > par.CO_amount  or Y_CO + delta_YCO > par.CO_amount) \
-		if (Y_CO > par.CO_amount  or Y_CO + delta_YCO > par.CO_amount):
+		if ((Y_CO > 0) and ((Y_CO > par.CO_amount) or (Y_CO + delta_YCO > par.CO_amount))):
 			while (np.absolute(delta_YCO) > par.percentCO*Y_CO):
 				adaptive_dt_flag = 1
 				dt = dt/2.
