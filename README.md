@@ -3,7 +3,8 @@ Newtonian integration of CO abundances
 
 # To run
 Specify runtime parameters in parameters.py
-run COintegrate.py
+
+$ run COintegrate.py
 
 
 
