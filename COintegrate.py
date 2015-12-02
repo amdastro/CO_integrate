@@ -64,7 +64,6 @@ while t < par.tmax:
 
 	#---------------- First choose dt ------------------#
 	dt = par.dt_init
-	t = t + dt
 	Y_CO_equilibrium = ab.Y_CO_equil(par.Y_C_tot, par.Y_O_tot, n, K_ra, K_rd)
 	#if t > par.t_integrate:
 	if Y_CO_equilibrium > 1e-5:
@@ -91,7 +90,7 @@ while t < par.tmax:
 		integrate_flag = 0
 		Y_CO = Y_CO_equilibrium
 	#--------------------------------------------------#
-
+	t = t + dt
 	# Expand the shell
 	R_cs = par.R_cs_init + par.v_ej*t
 	delta = par.delta_init + c_s*t
